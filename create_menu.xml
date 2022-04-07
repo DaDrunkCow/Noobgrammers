@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_with_shadow"
+    android:onClick="deleteAlarm">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <NumberPicker
+            android:id="@+id/numPickerHr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:theme="@style/AppTheme.Bland" />
+
+        <TextView
+            android:id="@+id/colon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=":"
+            android:textSize="34sp" />
+
+        <NumberPicker
+            android:id="@+id/numPickerMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:theme="@style/AppTheme.Bland" />
+
+        <NumberPicker
+            android:id="@+id/numPickerPeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:theme="@style/AppTheme.Bland" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/alarmTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:hint="Title"
+        android:maxLength="15"
+        android:textSize="24sp"
+        android:theme="@style/AppTheme.Bland"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/daysOfWeek1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTitle">
+
+        <Button
+            android:id="@+id/sun"
+            style="@style/smallButton"
+            android:text="S"
+            android:textColor="@color/darkgrey" />
+
+        <Button
+            android:id="@+id/tue"
+            style="@style/smallButton"
+            android:text="T"
+            android:textColor="@color/darkgrey" />
+
+        <Button
+            android:id="@+id/thu"
+            style="@style/smallButton"
+            android:text="T"
+            android:textColor="@color/darkgrey" />
+
+        <Button
+            android:id="@+id/sat"
+            style="@style/smallButton"
+            android:text="S"
+            android:textColor="@color/darkgrey" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/daysOfWeek2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daysOfWeek1">
+
+        <Button
+            android:id="@+id/mon"
+            style="@style/smallButton"
+            android:text="M"
+            android:textColor="@color/darkgrey" />
+
+        <Button
+            android:id="@+id/wed"
+            style="@style/smallButton"
+            android:text="W"
+            android:textColor="@color/darkgrey" />
+
+        <Button
+            android:id="@+id/fri"
+            style="@style/smallButton"
+            android:text="F"
+            android:textColor="@color/darkgrey" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/blue"
+        android:onClick="createAlarm"
+        android:text="ACCEPT"
+        android:textColor="@color/white"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/daysOfWeek2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="deleteAlarm"
+        app:backgroundTint="#00FFFFFF"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
